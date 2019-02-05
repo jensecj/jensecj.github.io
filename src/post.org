@@ -1,4 +1,4 @@
 #+options: toc:nil
 #+author: Jens Christian Jensen
 #+email: jensecj@gmail.com
-#+HTML_MATHJAX: align: left indent: 5em tagside: left font: Neo-Euler
+#+HTML_MATHJAX: align: left indent: 5em tagside: left
