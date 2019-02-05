@@ -1,4 +1,5 @@
-#+options: toc:nil
 #+author: Jens Christian Jensen
 #+email: jensecj@gmail.com
+
+#+options: toc:nil
 #+HTML_MATHJAX: align: left indent: 5em tagside: left
