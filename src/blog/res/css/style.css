@@ -8,3 +8,8 @@ body {
 .footref {
     text-decoration: none;
 }
+
+.org-src-name {
+    font-size: .8em;
+    font-weight: bold;
+}
