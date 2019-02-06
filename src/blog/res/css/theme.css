@@ -34,3 +34,7 @@ pre span.org-sh-quoted-exec              {color:#FF1493;}
 pre.src:before {
     display: inline;
 }
+
+.linenr {
+    color: #6f6f6f;
+}
