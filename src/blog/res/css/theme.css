@@ -1,10 +1,11 @@
 pre                                      {background-color:#FFFFFF; box-shadow: none;}
-pre span.org-builtin                     {color:#494949;font-weight:bold;}
-pre span.org-highlight-defined-builtin-function-name {color:#494949;font-weight:bold;}
+pre span.org-builtin                     {color:#blog000;font-weight:bold;}
+pre span.org-highlight-defined-builtin-function-name {color:#000;font-weight:bold;}
 pre span.org-string                      {color:#9C6363;}
 pre span.org-keyword                     {color:#0000FF;}
 pre span.org-variable-name               {color:#BA36A5;}
-pre span.org-function-name               {color:#006699;}
+pre span.org-function-name               {color:#5C888B;}
+pre span.org-highlight-defined-function-name  {color:#5C888B;}
 pre span.org-type                        {color:#6434A3;}
 pre span.org-preprocessor                {color:#808080;font-weight:bold;}
 pre span.org-constant                    {color:#D0372D;}
