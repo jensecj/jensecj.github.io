@@ -1,7 +1,9 @@
 #+author: Jens Christian Jensen
 #+email: jensecj@gmail.com
+#+title: ι = 1 | 0 ι ι
+#+description: exploring programming, AI, and the rest of the world.
+#+options: toc:nil title:nil
 
-#+options: toc:nil
 #+HTML_MATHJAX: tagside: left font: Neo-Euler
 #+HTML_MATHJAX: cancel.js noErrors.js AMSmath.js AMSsymbol.js
 # #+OPTIONS: tex:dvipng
