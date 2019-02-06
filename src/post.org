@@ -2,6 +2,6 @@
 #+email: jensecj@gmail.com
 
 #+options: toc:nil
-#+HTML_MATHJAX: tagside: left font: Neo-euler
+#+HTML_MATHJAX: tagside: left font: Neo-Euler
 #+HTML_MATHJAX: cancel.js noErrors.js AMSmath.js AMSsymbol.js
 # #+OPTIONS: tex:dvipng

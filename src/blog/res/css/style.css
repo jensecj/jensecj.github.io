@@ -20,16 +20,16 @@ a {
     font-weight: bold;
 }
 
-#org-div-home-and-up {
+header {
     font-size: 1em;
     text-align: center;
 }
 
-#org-div-home-and-up ul {
+header ul {
     list-style-type: none;
     display: inline-flex;
 }
 
-#org-div-home-and-up li {
+header li {
     margin: 0 10px 0 10px;
 }
