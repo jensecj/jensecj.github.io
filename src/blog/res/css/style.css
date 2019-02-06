@@ -13,3 +13,17 @@ body {
     font-size: .8em;
     font-weight: bold;
 }
+
+#org-div-home-and-up {
+    font-size: 1em;
+    text-align: center;
+}
+
+#org-div-home-and-up ul {
+    list-style-type: none;
+    display: inline-flex;
+}
+
+#org-div-home-and-up li {
+    margin: 0 10px 0 10px;
+}
