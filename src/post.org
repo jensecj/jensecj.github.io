@@ -1,6 +1,5 @@
 #+author: Jens Christian Jensen
 #+email: jensecj@gmail.com
-#+title: ι = 1 | 0 ι ι
 #+description: exploring programming, AI, and the rest of the world.
 #+options: toc:nil title:nil
 
