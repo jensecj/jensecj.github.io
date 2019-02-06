@@ -43,9 +43,16 @@ footer {
 }
 
 code {
-    background-color: rgba(27, 31, 35, 0.11);
+    background-color: rgba(27, 31, 35, 0.06);
     border-radius: 3px;
     font-size: 90%;
     margin: 0;
     padding: .2em .4em;
+}
+
+.archive {
+    text-align: left;
+    margin-left: 30%;
+    font-size: 1.2em;
+    list-style-type: none;
 }
