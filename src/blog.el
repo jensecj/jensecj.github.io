@@ -15,6 +15,26 @@
     (shell-command "xdotool search --onlyvisible --classname Navigator windowactivate --sync key F5")
     (shell-command (format "xdotool windowactivate %s" current-window))))
 
+(defun blog--sitemap-format-entry (entry _style project)
+  "Return string for each ENTRY in PROJECT."
+  (when (s-starts-with-p "posts/" entry)
+    (let* ((file (org-publish--expand-file-name entry project))
+           (filename (f-no-ext (f-filename file)))
+           (date (substring filename 0 10))
+           (title (s-replace "-" " " (substring filename 11))))
+      (format "@@html:<span class=\"archive-item\"><span class=\"archive-date\">@@ %s @@html:</span>@@ [[file:%s][%s]] @@html:</span>@@"
+              date entry title))))
+
+(defun blog--sitemap-function (title list)
+  "Return sitemap using TITLE and LIST returned by `org-blog-sitemap-format-entry'."
+  (concat
+   "\n#+begin_archive\n"
+   (mapconcat (lambda (li)
+                (format "@@html:<li>@@ %s @@html:</li>@@" (car li)))
+              (seq-filter #'car (cdr list))
+              "\n")
+   "\n#+end_archive\n"))
+
 (defun blog--head ()
   "Contents of the <head> tag."
   (concat "<link rel=\"stylesheet\" type=\"text/css\" href=\"/res/css/style.css\" />\n"
@@ -31,31 +51,9 @@
    </nav>
 </header>")
 
-
 (defun blog--footer (_plist)
-  "Footer content"
-  "<footer> </footer>")
-
-(defun blog-sitemap-format-entry (entry _style project)
-  "Return string for each ENTRY in PROJECT."
-  (when (s-starts-with-p "posts/" entry)
-    (let* ((file (org-publish--expand-file-name entry project))
-           (filename (f-no-ext (f-filename file)))
-           (date (substring filename 0 10))
-           (title (s-replace "-" " " (substring filename 11))))
-      (format "@@html:<span class=\"archive-item\"><span class=\"archive-date\">@@ %s @@html:</span>@@ [[file:%s][%s]] @@html:</span>@@"
-              date entry title))))
-
-(defun blog-sitemap-function (title list)
-  "Return sitemap using TITLE and LIST returned by `org-blog-sitemap-format-entry'."
-  (concat
-   "\n#+begin_archive\n"
-   (mapconcat (lambda (li)
-                (format "@@html:<li>@@ %s @@html:</li>@@" (car li)))
-              (seq-filter #'car (cdr list))
-              "\n")
-   "\n#+end_archive\n"))
-
+  "Footer content."
+  "<footer></footer>")
 
 (defun blog-publish (force)
   "Publish `blog' target using `org-publish'.
@@ -96,8 +94,8 @@ Force publish all files if called with `prefix-argument'."
               :sitemap-filename "archive.org"
               :sitemap-style list
               :sitemap-sort-files anti-chronologically
-              :sitemap-format-entry blog-sitemap-format-entry
-              :sitemap-function blog-sitemap-function)
+              :sitemap-format-entry blog--sitemap-format-entry
+              :sitemap-function blog--sitemap-function)
              ("blog-rss"
               :base-directory "~/vault/blog/src/blog/"
               :base-extension "org"
@@ -119,6 +117,6 @@ Force publish all files if called with `prefix-argument'."
              ("blog" :components ("blog-org-to-html" "blog-assets"))
              )))
       (org-publish-project "blog" force)
-      (blog-reload-firefox))))
+      (blog--reload-firefox))))
 
 (provide 'blog)
