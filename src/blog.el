@@ -3,7 +3,11 @@
 (require 'ox-publish)
 (require 'ox-rss)
 
-(defun blog-reload-firefox ()
+(require 's)
+(require 'f)
+(require 'dash)
+
+(defun blog--reload-firefox ()
   "Reaload visible firefox browser using `xdotool'"
   (interactive)
   ;; TODO: should be more specific, maybe using window id?
