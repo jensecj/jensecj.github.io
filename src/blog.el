@@ -86,7 +86,7 @@ Force publish all files if called with `prefix-argument'."
           (org-export-use-babel t)
 
           (org-publish-project-alist
-           `(("blog-org-to-html"
+           `(("blog-org-files"
               :recursive t
               :base-directory "~/vault/blog/src/blog/"
               :base-extension "org"
@@ -134,7 +134,7 @@ Force publish all files if called with `prefix-argument'."
               :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf"
               :publishing-directory "~/vault/blog/"
               :publishing-function org-publish-attachment)
-             ("blog" :components ("blog-org-to-html" "blog-assets"))
+             ("blog" :components ("blog-org-files" "blog-rss" "blog-assets"))
              )))
       (org-publish-project "blog" force)
       (unless no-refresh
