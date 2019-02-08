@@ -37,21 +37,25 @@
 
 (defun blog--sitemap-format-entry (entry _style project)
   "Return string for each ENTRY in PROJECT."
-  (when (s-starts-with-p "posts/" entry)
+  (when (s-starts-with? "posts/" entry)
     (let* ((file (org-publish--expand-file-name entry project))
            (filename (f-no-ext (f-filename file)))
            (date (substring filename 0 10))
            (title (s-replace "-" " " (substring filename 11))))
-      (format "@@html:<span class=\"archive-item\"><span class=\"archive-date\">@@ %s @@html:</span>@@ [[file:%s][%s]] @@html:</span>@@"
-              date entry title))))
+      (format
+       "@@html:<span class=\"archive-item\"><span class=\"archive-date\">@@ \
+%s @@html:</span>@@ \
+[[file:%s][%s]] \
+@@html:</span>@@"
+       date entry title))))
 
-(defun blog--sitemap-function (title list)
-  "Return sitemap using TITLE and LIST returned by `org-blog-sitemap-format-entry'."
+(defun blog--sitemap-function (title plist)
+  "Return sitemap using TITLE and PLIST returned by `org-blog-sitemap-format-entry'."
   (concat
    "\n#+begin_archive\n"
    (mapconcat (lambda (li)
                 (format "@@html:<li>@@ %s @@html:</li>@@" (car li)))
-              (seq-filter #'car (cdr list))
+              (seq-filter #'car (cdr plist))
               "\n")
    "\n#+end_archive\n"))
 
