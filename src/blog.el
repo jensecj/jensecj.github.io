@@ -118,6 +118,7 @@ Force publish all files if called with `prefix-argument'."
              )))
       (org-publish-project "blog" force)
       (unless no-refresh
-        (blog--reload-firefox)))))
+        (blog--reload-firefox))
+      (message "Finished publishing"))))
 
 (provide 'blog)
