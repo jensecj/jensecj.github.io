@@ -7,6 +7,10 @@
 (require 'f)
 (require 'dash)
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;; utility functions ;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
 (defun blog--reload-firefox ()
   "Reaload visible firefox browser using `xdotool'"
   ;; TODO: should be more specific, maybe using window id?
@@ -26,6 +30,10 @@
          (pick (completing-read "Find post: " (-concat drafts posts))))
     (when pick
       (find-file pick))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; construction functions ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun blog--sitemap-format-entry (entry _style project)
   "Return string for each ENTRY in PROJECT."
