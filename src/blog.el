@@ -14,6 +14,19 @@
     (shell-command "xdotool search --onlyvisible --classname Navigator windowactivate --sync key F5")
     (shell-command (format "xdotool windowactivate %s" current-window))))
 
+(defun blog--find-org-files (path)
+  "Resursively find all .org files at PATH."
+  (f-entries path #'(lambda (f) (f-ext? f "org")) t))
+
+(defun blog-find-posts-file ()
+  "Visit a posts file."
+  (interactive)
+  (let* ((drafts (blog--find-org-files "~/vault/blog/src/drafts/"))
+         (posts (blog--find-org-files "~/vault/blog/src/blog/posts/"))
+         (pick (completing-read "Find post: " (-concat drafts posts))))
+    (when pick
+      (find-file pick))))
+
 (defun blog--sitemap-format-entry (entry _style project)
   "Return string for each ENTRY in PROJECT."
   (when (s-starts-with-p "posts/" entry)
