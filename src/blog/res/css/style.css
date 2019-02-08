@@ -20,6 +20,15 @@ a {
     text-decoration: none;
 }
 
+.footdef > sup > a:target {
+    font-size: 1.3em;
+    margin-left: 10px;
+}
+
+.footdef > sup > a:target::before {
+    content: "→ ";
+}
+
 .footref {
     text-decoration: none;
 }
