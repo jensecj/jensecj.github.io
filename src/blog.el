@@ -28,7 +28,7 @@
   (let* ((drafts (blog--find-org-files "~/vault/blog/src/drafts/"))
          (posts (blog--find-org-files "~/vault/blog/src/blog/posts/"))
          (pick (completing-read "Find post: " (-concat drafts posts))))
-    (when pick
+    (when (and pick (f-exists? pick))
       (find-file pick))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
