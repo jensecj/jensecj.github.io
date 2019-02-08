@@ -7,6 +7,15 @@ body {
     overflow-y: scroll;
 }
 
+h1 {}
+h2::before { content: "• "; }
+h3::before { content: "•• "; }
+h4::before { content: "••• "; }
+
+p {
+    line-height: 150%;
+}
+
 a {
     text-decoration: none;
 }
