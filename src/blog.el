@@ -101,11 +101,12 @@ Force publish all files if called with `prefix-argument'."
               :html-home/up-format ,(blog--header)
               :html-preamble nil
               :html-postamble blog--footer
-              :html-head-include-scripts nil
               :html-html5-fancy t
               :html-doctype "html5"
               :html-link-home "/"
               :html-link-up "/"
+              :html-head-include-default-style t
+              :html-head-include-scripts nil
 
               :with-toc nil
               :with-author t
