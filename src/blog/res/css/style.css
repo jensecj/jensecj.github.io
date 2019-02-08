@@ -85,10 +85,19 @@ code {
     margin-top: 50px;
 }
 
+/* always show code name box */
+pre.src:before {
+    display: inline;
+}
 
-pre {
+pre.src {
     font-size: 1.2em;
     background-color:#FFFFFF;
+    box-shadow: none;
+    padding: 10px;
+}
+
+pre.example {
     box-shadow: none;
 }
 
@@ -128,8 +137,3 @@ pre span.org-rainbow-delimiters-depth-8              {color:#80a880;}
 pre span.org-rainbow-delimiters-depth-9              {color:#887070;}
 
 pre span.org-sh-quoted-exec                          {color:#FF1493;}
-
-/* always show code name box */
-pre.src:before {
-    display: inline;
-}
