@@ -9,7 +9,6 @@
 
 (defun blog--reload-firefox ()
   "Reaload visible firefox browser using `xdotool'"
-  (interactive)
   ;; TODO: should be more specific, maybe using window id?
   (let ((current-window (s-trim (shell-command-to-string "xdotool getactivewindow"))))
     (shell-command "xdotool search --onlyvisible --classname Navigator windowactivate --sync key F5")
