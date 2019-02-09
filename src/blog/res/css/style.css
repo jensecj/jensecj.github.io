@@ -64,14 +64,6 @@ footer {
     opacity: 0.6;
 }
 
-code {
-    background-color: rgba(27, 31, 35, 0.06);
-    border-radius: 3px;
-    font-size: 90%;
-    margin: 0;
-    padding: .2em .4em;
-}
-
 .archive {
     text-align: left;
     margin-left: 30%;
@@ -85,14 +77,29 @@ code {
     margin-top: 50px;
 }
 
+code {
+    /* background-color: rgba(27, 31, 35, 0.06); */
+    background-color:#fcfcfc;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    margin: 0;
+    padding: .2em .4em;
+}
+
+
+pre {
+    background-color:#fcfcfc;
+    border-radius: 3px;
+}
+
 /* always show code name box */
 pre.src:before {
     display: inline;
+    border-radius: 3px;
 }
 
 pre.src {
     font-size: 1.2em;
-    background-color:#FFFFFF;
     box-shadow: none;
     padding: 10px;
 }
@@ -102,38 +109,21 @@ pre.example {
 }
 
 /* syntax highlighting */
-pre span.org-builtin                                 {color:#000; font-weight:bold;}
-pre span.org-string                                  {color:#9C6363;}
-pre span.org-doc                                  {color:#4F6F4F;}
-pre span.org-keyword                                 {color:#0000FF;}
-pre span.org-variable-name                           {color:#BA36A5;}
-pre span.org-function-name                           {color:#5C888B;}
-pre span.org-highlight-defined-function-name         {color:#5C888B;}
-pre span.org-highlight-defined-builtin-function-name {color:#000; font-weight:bold;}
-pre span.org-type                                    {color:#6434A3;}
-pre span.org-preprocessor                            {color:#808080; font-weight:bold;}
-pre span.org-constant                                {color:#2F4F2F;}
-pre span.org-comment-delimiter                       {color:#8D8D84;}
-pre span.org-comment                                 {color:#8D8D84; font-style:italic}
+span.org-builtin                                 {color:#444444; font-weight:bold;}
+span.org-highlight-defined-builtin-function-name {color:#444444; font-weight:bold;}
+span.org-string                                  {color:#9C6363;}
+span.org-doc                                     {color:#4D7D4F;}
+span.org-keyword                                 {color:#4456EE;}
+span.org-variable-name                           {color:#BA36A5;}
+span.org-highlight-defined-variable-name         {color:#656555;}
+span.org-function-name                           {color:#5885AD;}
+span.org-highlight-defined-function-name         {color:#5885AD;}
+span.org-type                                    {color:#6434A3;}
+span.org-preprocessor                            {color:#808080; font-weight:bold;}
+span.org-constant                                {color:#2F4F2F;}
+span.org-comment-delimiter                       {color:#8D8D84;}
+span.org-comment                                 {color:#8D8D84; font-style:italic}
 
-pre span.org-outshine-level-1                        {color:#8D8D84; font-style:italic}
-pre span.org-outshine-level-2                        {color:#8D8D84; font-style:italic}
-pre span.org-outshine-level-3                        {color:#8D8D84; font-style:italic}
-pre span.org-outshine-level-4                        {color:#8D8D84; font-style:italic}
-pre span.org-outshine-level-5                        {color:#8D8D84; font-style:italic}
-pre span.org-outshine-level-6                        {color:#8D8D84; font-style:italic}
-pre span.org-outshine-level-7                        {color:#8D8D84; font-style:italic}
-pre span.org-outshine-level-8                        {color:#8D8D84; font-style:italic}
-pre span.org-outshine-level-9                        {color:#8D8D84; font-style:italic}
+pre span.org-makefile-targets {color: #4456EE;}
 
-pre span.org-rainbow-delimiters-depth-1              {color:#707183;}
-pre span.org-rainbow-delimiters-depth-2              {color:#7388d6;}
-pre span.org-rainbow-delimiters-depth-3              {color:#909183;}
-pre span.org-rainbow-delimiters-depth-4              {color:#709870;}
-pre span.org-rainbow-delimiters-depth-5              {color:#907373;}
-pre span.org-rainbow-delimiters-depth-6              {color:#6276ba;}
-pre span.org-rainbow-delimiters-depth-7              {color:#858580;}
-pre span.org-rainbow-delimiters-depth-8              {color:#80a880;}
-pre span.org-rainbow-delimiters-depth-9              {color:#887070;}
-
-pre span.org-sh-quoted-exec                          {color:#FF1493;}
+pre span.org-sh-quoted-exec {color:#FF1493;}
