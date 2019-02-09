@@ -83,7 +83,7 @@
   "Footer content."
   "<footer></footer>")
 
-(defun blog-publish (force &optional no-refresh)
+(defun blog-publish (force)
   "Publish `blog' target using `org-publish'.
 Force publish all files if called with `prefix-argument'."
   (interactive "P")
@@ -146,8 +146,6 @@ Force publish all files if called with `prefix-argument'."
              ("blog" :components ("blog-org-files" "blog-rss" "blog-assets"))
              )))
       (org-publish-project "blog" force)
-      (unless no-refresh
-        (blog--reload-firefox))
       (message "Finished publishing"))))
 
 (provide 'blog)
