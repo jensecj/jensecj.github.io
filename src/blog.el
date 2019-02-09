@@ -59,10 +59,14 @@
               "\n")
    "\n#+end_archive\n"))
 
+(defun blog--link-resource (rel type href)
+  "Create a html string for linking a resource."
+  (format "<link rel=\"%s\" type=\"%s\" href=\"/res/%s\" />\n" rel type href))
+
 (defun blog--head ()
   "Contents of the <head> tag."
-  (concat "<link rel=\"stylesheet\" type=\"text/css\" href=\"/res/css/style.css\" />\n"
-          "<link rel=\"icon\" type=\"image/png\" href=\"/res/logo.png\">"))
+  (concat (blog--link-resource "stylesheet" "text/css" "css/style.css")
+          (blog--link-resource "icon" "image/png" "logo.png")))
 
 (defun blog--header ()
   "Header content, including navigation."
