@@ -38,8 +38,12 @@ a {
 }
 
 .org-src-name {
-    font-size: .8em;
+    font-size: .9em;
     font-weight: bold;
+}
+
+.org-src-name > code{
+    font-size: 1.1em;
 }
 
 header {
