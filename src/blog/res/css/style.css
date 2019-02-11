@@ -120,8 +120,8 @@ span.org-doc                                     {color:#4D7D4F;}
 span.org-keyword                                 {color:#4456EE;}
 span.org-variable-name                           {color:#BA36A5;}
 span.org-highlight-defined-variable-name         {color:#656555;}
-span.org-function-name                           {color:#5885AD;}
-span.org-highlight-defined-function-name         {color:#5885AD;}
+span.org-function-name                           {color:#5885AD; font-weight:bold;}
+span.org-highlight-defined-function-name         {color:#5885AD; font-weight:bold;}
 span.org-type                                    {color:#6434A3;}
 span.org-preprocessor                            {color:#808080; font-weight:bold;}
 span.org-constant                                {color:#2F4F2F;}
