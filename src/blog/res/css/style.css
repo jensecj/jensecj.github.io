@@ -64,6 +64,7 @@ header {
 header ul {
     list-style-type: none;
     display: inline-flex;
+    padding-inline-start: 0px;
 }
 
 header li {
