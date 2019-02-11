@@ -84,6 +84,7 @@ joined with a newline."
    </nav>
 </header>")
 
+;; TODO: add a link to the git history of the (.org) file being viewed
 (defun blog--footer (_plist)
   "Footer content."
   "<footer></footer>")
