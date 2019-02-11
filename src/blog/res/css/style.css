@@ -56,6 +56,11 @@ figure > img {
     font-size: 1.1em;
 }
 
+.coderef-off > .linenr {
+    font-weight: bold;
+    color: #515151;
+}
+
 header {
     font-size: 1em;
     text-align: center;
