@@ -20,6 +20,16 @@ a {
     text-decoration: none;
 }
 
+figure {
+    margin-inline-start: 5px;
+    margin-inline-end: 5px;
+}
+figure > img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
 .footdef > sup > a:target {
     font-size: 1.3em;
     margin-left: 10px;
