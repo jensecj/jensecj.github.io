@@ -11,6 +11,11 @@
 ;; utility functions ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+(defun fmt (strings &rest args)
+  "Accept format string as a list of strings, which will be
+joined with a newline."
+  (apply #'format (s-join "\n" strings) args))
+
 (defun blog--reload-firefox ()
   "Reaload visible firefox browser using `xdotool'"
   ;; TODO: should be more specific, maybe using window id?
@@ -42,11 +47,11 @@
            (filename (f-no-ext (f-filename file)))
            (date (substring filename 0 10))
            (title (s-replace "-" " " (substring filename 11))))
-      (format
-       "@@html:<span class=\"archive-item\"><span class=\"archive-date\">@@ \
-%s @@html:</span>@@ \
-[[file:%s][%s]] \
-@@html:</span>@@"
+      (fmt
+       '("@@html:<span class=\"archive-item\"><span class=\"archive-date\">@@"
+         "%s @@html:</span>@@"
+         "[[file:%s][%s]]"
+         "@@html:</span>@@")
        date entry title))))
 
 (defun blog--sitemap-function (title plist)
