@@ -88,10 +88,26 @@ joined with a newline."
    </nav>
 </header>")
 
-;; TODO: add a link to the git history of the (.org) file being viewed
-(defun blog--footer (_plist)
-  "Footer content."
-  "<footer></footer>")
+(defun blog--footer (plist)
+  "Footer content.  Includes a link to the `.org' source-file of
+the current file on github."
+  (let* ((github-path "https://github.com/jensecj/jensecj.github.io/tree/master/src/blog/")
+         (path-parts (f-split (plist-get plist :input-file)))
+         (path (last path-parts 2))
+         (parent (car path))
+         (file (cadr path)))
+    (if-let ((path
+              (cond
+               ((string= parent "blog") file)
+               ((string= parent "posts") (concat "posts/" file))
+               (t nil))))
+        (concat
+         "<footer>"
+         (format
+          "<a href=\"%s\"> view source for this file </a>"
+          (concat github-path path))
+         "</footer>")
+      "<footer></footer>")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; publishing functions ;;
