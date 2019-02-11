@@ -11,7 +11,7 @@
 ;; utility functions ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun fmt (strings &rest args)
+(defun blog--fmt (strings &rest args)
   "Accept format string as a list of strings, which will be
 joined with a newline."
   (apply #'format (s-join "\n" strings) args))
@@ -47,7 +47,7 @@ joined with a newline."
            (filename (f-no-ext (f-filename file)))
            (date (substring filename 0 10))
            (title (s-replace "-" " " (substring filename 11))))
-      (fmt
+      (blog--fmt
        '("@@html:<span class=\"archive-item\"><span class=\"archive-date\">@@"
          "%s @@html:</span>@@"
          "[[file:%s][%s]]"
