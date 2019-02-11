@@ -93,10 +93,12 @@ joined with a newline."
 Force publish all files if called with `prefix-argument'."
   (interactive "P")
   (save-excursion
-    (let ((org-html-htmlize-output-type 'css)
-          (org-confirm-babel-evaluate nil)
-          (org-export-babel-evaluate t)
+    (let (;; export css-selectors for things, makes styling code-blocks simple.
+          (org-html-htmlize-output-type 'css)
+
+          ;; eval code blocks and dont ask about it
           (org-export-use-babel t)
+          (org-confirm-babel-evaluate nil)
 
           (org-publish-project-alist
            `(("blog-org-files"
@@ -148,8 +150,7 @@ Force publish all files if called with `prefix-argument'."
               :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf"
               :publishing-directory "~/vault/blog/"
               :publishing-function org-publish-attachment)
-             ("blog" :components ("blog-org-files" "blog-rss" "blog-assets"))
-             )))
+             ("blog" :components ("blog-org-files" "blog-rss" "blog-assets")))))
       (org-publish-project "blog" force)
       (message "Finished publishing"))))
 
