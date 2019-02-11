@@ -36,9 +36,9 @@ joined with a newline."
     (when (and pick (f-exists? pick))
       (find-file pick))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; construction functions ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; component functions ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun blog--sitemap-format-entry (entry _style project)
   "Return string for each ENTRY in PROJECT."
@@ -64,6 +64,10 @@ joined with a newline."
               "\n")
    "\n#+end_archive\n"))
 
+;;;;;;;;;;;;;;;;;;;;
+;; html functions ;;
+;;;;;;;;;;;;;;;;;;;;
+
 (defun blog--link-resource (rel type href)
   "Create a html string for linking a resource."
   (format "<link rel=\"%s\" type=\"%s\" href=\"/res/%s\" />\n" rel type href))
@@ -88,6 +92,10 @@ joined with a newline."
 (defun blog--footer (_plist)
   "Footer content."
   "<footer></footer>")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; publishing functions ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun blog-publish (force)
   "Publish `blog' target using `org-publish'.
