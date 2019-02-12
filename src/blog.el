@@ -92,6 +92,7 @@ joined with a newline."
   "Footer content.  Includes a link to the `.org' source-file of
 the current file on github."
   (let* ((github-path "https://github.com/jensecj/jensecj.github.io/tree/master/src/blog/")
+         (github-issues "https://github.com/jensecj/jensecj.github.io/issues")
          (path-parts (f-split (plist-get plist :input-file)))
          (path (last path-parts 2))
          (parent (car path))
@@ -106,6 +107,9 @@ the current file on github."
          (format
           "<a href=\"%s\"> view source for this file </a>"
           (concat github-path path))
+         "<br>"
+         (format "found an error? <a href=\"%s\">file an issue on github</a>."
+                 github-issues)
          "</footer>")
       "<footer></footer>")))
 

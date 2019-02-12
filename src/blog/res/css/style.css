@@ -79,9 +79,10 @@ header li {
 footer {
     text-align: center;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 50px;
     font-size: .8em;
     opacity: 0.6;
+    line-height: 150%;
 }
 
 .archive {
